@@ -4,9 +4,8 @@ const router = express.Router();
 // Student model
 const Students = require('../models/students');
 
-// @route   GET /api/students/
-// @desc    Get all students
-// @access  Public
+
+
 router.get('/', async (req, res) => {
   try {
     const students = await Students.find({});
@@ -14,11 +13,11 @@ router.get('/', async (req, res) => {
   } catch(err) {
     res.status(400).send({ error: err });
   }
-});
+}); 
 
-// @route   GET /api/students/:id
-// @desc    Get a specific student
-// @access  Public
+
+
+
 router.get('/:id', async (req, res) => {
   try {
     const student = await Students.findById(req.params.id);
@@ -28,9 +27,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// @route   POST /api/students/
-// @desc    Create a student
-// @access  Public
+
 router.post('/', async (req, res) => {
   try {
     const newStudent = await Students.create({ name: req.body.name, email: req.body.email, enrollnumber: req.body.enrollnumber });
@@ -41,9 +38,7 @@ router.post('/', async (req, res) => {
 
 });
 
-// @route   PUT /api/students/:id
-// @desc    Update a student
-// @access  Public
+
 router.put('/:id', async (req, res) => {
   try {
     const updatedStudent = await Students.findByIdAndUpdate(req.params.id, req.body);
@@ -53,9 +48,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-// @route   DELETE /api/students/:id
-// @desc    Delete a student
-// @access  Public
+
 router.delete('/:id', async (req, res) => {
   try {
     const removeStudent = await Students.findByIdAndRemove(req.params.id);

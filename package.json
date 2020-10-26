@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test": "jest",
     "client-install": "cd client && npm install",
     "start": "node server.js",
     "server": "nodemon server.js",
@@ -21,10 +22,10 @@
     "helmet": "^3.12.1",
     "mongoose": "^5.7.5",
     "prop-types": "^15.7.2",
-    "react-avatar": "^3.6.0"
+    "react-avatar": "^3.6.0",
+    "supertest": "^5.0.0"
   },
   "devDependencies": {
-    "jest": "^26.6.1",
     "nodemon": "^1.17.5"
   }
 }
